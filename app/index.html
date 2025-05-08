@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <script src="{{{appclient}}}"></script>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  </head>
+
+  <body>
+    <section class="app-body">
+      <h2>Risk Assessment Questionnaire</h2>
+      <form id="riskAssessmentForm">
+        <div>
+          <label>1. What is the impact of this change on business operations?</label>
+          <div>
+            <input type="radio" id="q1_low" name="q1" value="low" required>
+            <label for="q1_low">Low</label>
+          </div>
+          <div>
+            <input type="radio" id="q1_medium" name="q1" value="medium">
+            <label for="q1_medium">Medium</label>
+          </div>
+          <div>
+            <input type="radio" id="q1_high" name="q1" value="high">
+            <label for="q1_high">High</label>
+          </div>
+        </div>
+        <div>
+          <label>2. What is the likelihood of failure during this change?</label>
+          <div>
+            <input type="radio" id="q2_low" name="q2" value="low" required>
+            <label for="q2_low">Low</label>
+          </div>
+          <div>
+            <input type="radio" id="q2_medium" name="q2" value="medium">
+            <label for="q2_medium">Medium</label>
+          </div>
+          <div>
+            <input type="radio" id="q2_high" name="q2" value="high">
+            <label for="q2_high">High</label>
+          </div>
+        </div>
+        <div>
+          <label>3. Do you have a rollback plan?</label>
+          <div>
+            <input type="radio" id="q3_yes" name="q3" value="yes" required>
+            <label for="q3_yes">Yes</label>
+          </div>
+          <div>
+            <input type="radio" id="q3_no" name="q3" value="no">
+            <label for="q3_no">No</label>
+          </div>
+        </div>
+        <div>
+          <label>4. Has the change been tested in a lower environment?</label>
+          <div>
+            <input type="radio" id="q4_yes" name="q4" value="yes" required>
+            <label for="q4_yes">Yes</label>
+          </div>
+          <div>
+            <input type="radio" id="q4_no" name="q4" value="no">
+            <label for="q4_no">No</label>
+          </div>
+        </div>
+        <div>
+          <label>5. Can the requested changes be validated after deployment?</label>
+          <div>
+            <input type="radio" id="q5_yes" name="q5" value="yes" required>
+            <label for="q5_yes">Yes</label>
+          </div>
+          <div>
+            <input type="radio" id="q5_no" name="q5" value="no">
+            <label for="q5_no">No</label>
+          </div>
+        </div>
+        <div id="q5NoReason" style="display: none;">
+          <label for="q5NoReasonText">If No, why?</label>
+          <textarea id="q5NoReasonText" name="q5NoReasonText" rows="3"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <p id="apptext"></p>
+    </section>
+  </body>
+  <script src="scripts/app.js"></script>
+</html>
