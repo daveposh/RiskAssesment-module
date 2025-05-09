@@ -1,5 +1,43 @@
 {
+  "name": "freshservice-risk-assessment",
+  "version": "1.0.0",
+  "description": "A Freshservice app for risk assessment questionnaires on Change tickets",
   "engines": {
     "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "npm run test:coverage && fdk pack",
+    "build:skip-coverage": "node build.js",
+    "start": "fdk run",
+    "test": "jest",
+    "test:coverage": "jest --coverage --coverageReporters=json-summary"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "collectCoverageFrom": [
+      "app/scripts/**/*.js",
+      "!app/scripts/**/*.test.js"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover",
+      "cobertura",
+      "json-summary"
+    ],
+    "coverageDirectory": ".coverage/unit",
+    "coverageThreshold": {
+      "global": {
+        "statements": 80,
+        "branches": 80,
+        "functions": 80,
+        "lines": 80
+      }
+    }
   }
-} 
+}

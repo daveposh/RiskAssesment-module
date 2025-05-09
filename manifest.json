@@ -13,5 +13,10 @@
   "engines": {
     "node": "18.18.2",
     "fdk": "9.3.0"
+  },
+  "config": {
+    "coverage": {
+      "skip": true
+    }
   }
 }
